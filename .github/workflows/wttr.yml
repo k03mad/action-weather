@@ -1,6 +1,9 @@
 name: Wttr
 
 on:
+  push:
+    branches:
+      - master
   schedule:
     - cron: '0 */1 * * *'
 
