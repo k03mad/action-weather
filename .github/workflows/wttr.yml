@@ -22,7 +22,7 @@ jobs:
           export LC_ALL=ru_RU.UTF-8
           sudo locale-gen ru_RU.UTF-8
 
-          sed -i "3i- \`$(date)\`$(curl 'wttr.in/Moscow?M&format=%c::+T+%t+::+H+%h+::+W+%w+::+Ps+%p+::+Pc+%P+::+UV+%u')" README.md
+          sed -i "3i- \`$(date)\` $(curl 'wttr.in/Moscow?M&format=%c::+T+%t+::+H+%h+::+W+%w+::+Ps+%p+::+Pc+%P+::+UV+%u')" README.md
 
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
