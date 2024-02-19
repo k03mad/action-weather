@@ -1,0 +1,13 @@
+name: Wttr
+
+on:
+  schedule:
+    - cron: '0 */1 * * *'
+
+jobs:
+  wttr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          curl 'wttr.in/Moscow?M&format=%T+::+%l+::+%c::+%m+::+T+%t+::+H+%h+::+W+%w+::+Ps+%p+::+Pc+%P+::+UV+%u'
