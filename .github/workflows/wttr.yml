@@ -15,4 +15,4 @@ jobs:
       - run: |
           sed -i "1i$(curl 'wttr.in/Moscow?M&format=%T+::+%l+::+%c::+%m+::+T+%t+::+H+%h+::+W+%w+::+Ps+%p+::+Pc+%P+::+UV+%u\n')" README.md
           echo 'hello'
-          ccat README.md
+          cat README.md
