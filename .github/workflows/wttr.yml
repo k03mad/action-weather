@@ -12,7 +12,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
       - run: |
           sed -i "1i$(curl 'wttr.in/Moscow?M&format=%T+::+%l+::+%c::+%m+::+T+%t+::+H+%h+::+W+%w+::+Ps+%p+::+Pc+%P+::+UV+%u\n')" README.md
-          echo 'hello'
-          cat README.md
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git commit -a -m "update wttr"
+      - uses: ad-m/github-push-action@v0.8.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: master
