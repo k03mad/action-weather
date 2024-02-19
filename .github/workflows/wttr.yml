@@ -13,4 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          curl 'wttr.in/Moscow?M&format=%T+::+%l+::+%c::+%m+::+T+%t+::+H+%h+::+W+%w+::+Ps+%p+::+Pc+%P+::+UV+%u'
+          sed -i "1i$(curl 'wttr.in/Moscow?M&format=%T+::+%l+::+%c::+%m+::+T+%t+::+H+%h+::+W+%w+::+Ps+%p+::+Pc+%P+::+UV+%u\n')" README.md
+          echo 'hello'
+          ccat README.md
