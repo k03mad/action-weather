@@ -17,7 +17,7 @@ jobs:
           fetch-depth: 0
       - uses: szenius/set-timezone@v1.2
         with:
-          timezoneLinux: "Europe/Moscow"
+          timezoneLinux: Europe/Moscow
       - run: |
           export LC_ALL=ru_RU.UTF-8
           sudo locale-gen ru_RU.UTF-8
