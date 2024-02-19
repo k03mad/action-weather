@@ -15,8 +15,9 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
+          #           sed -i "1i$(curl 'wttr.in/Moscow?M&format=%T+::+%l+::+%c::+%m+::+T+%t+::+H+%h+::+W+%w+::+Ps+%p+::+Pc+%P+::+UV+%u\n')" README.md
       - run: |
-          sed -i "1i$(curl 'wttr.in/Moscow?M&format=%T+::+%l+::+%c::+%m+::+T+%t+::+H+%h+::+W+%w+::+Ps+%p+::+Pc+%P+::+UV+%u\n')" README.md
+          date >> README.md
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git commit -a -m "update wttr"
