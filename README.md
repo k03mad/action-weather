@@ -1,5 +1,6 @@
 [![Wttr](https://github.com/k03mad/action-weather/actions/workflows/wttr.yml/badge.svg)](https://github.com/k03mad/action-weather/actions/workflows/wttr.yml)
 ## Прогноз погоды в Москве, автоматически обновляется раз в час :)
+- `Ср 21 фев 2024 13:12:40 MSK` [ ⛅️ ] 🌡️ -4°C 💧 74% 🗜 1022hPa 💨 ↖6.1m/s ☔ 0.1mm 🌞 1UV
 - `Ср 21 фев 2024 12:13:12 MSK` 
 - `Ср 21 фев 2024 11:14:55 MSK` 
 - `Ср 21 фев 2024 10:10:23 MSK` 
