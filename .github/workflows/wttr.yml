@@ -23,7 +23,7 @@ jobs:
           sudo locale-gen ru_RU.UTF-8
 
           weather=$(curl 'wttr.in/Moscow?M&format=\[+%c\]+🌡️+%t+💧+%h+🗜+%P+💨+%w+☔+%p+🌞+%uUV')
-          test -z $weather && sed -i "3i- \`$(date)\` $(weather)" README.md
+          [[ -n $weather ]] && sed -i "3i- \`$(date)\` $(weather)" README.md
 
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
