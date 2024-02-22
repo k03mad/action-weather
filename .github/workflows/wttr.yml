@@ -19,7 +19,6 @@ jobs:
         with:
           timezoneLinux: Europe/Moscow
       - run: |
-          export LC_ALL=ru_RU.UTF-8
           sudo locale-gen ru_RU.UTF-8
 
           weather=$(curl 'wttr.in/Moscow?M&format=\[+%c\]+🌡️+%t+💧+%h+🗜+%P+💨+%w+☔+%p+🌞+%uUV')
