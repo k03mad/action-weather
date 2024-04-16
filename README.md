@@ -1,5 +1,6 @@
 [![Wttr](https://github.com/k03mad/action-weather/actions/workflows/wttr.yml/badge.svg)](https://github.com/k03mad/action-weather/actions/workflows/wttr.yml)
 ## Прогноз погоды в Москве, автоматически обновляется раз в час :)
+- `Вт 16 апр 2024 11:14:15 MSK` Unknown location; please try ~55.7506828,37.6174976
 - `Вт 16 апр 2024 10:13:29 MSK` Unknown location; please try ~55.7506828,37.6174976
 - `Вт 16 апр 2024 09:14:32 MSK` Unknown location; please try ~55.7506828,37.6174976
 - `Вт 16 апр 2024 08:12:05 MSK` Unknown location; please try ~55.7506828,37.6174976
