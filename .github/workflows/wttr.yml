@@ -22,8 +22,12 @@ jobs:
           export LC_ALL=ru_RU.UTF-8
           sudo locale-gen ru_RU.UTF-8
 
-          weather=$(curl 'wttr.in/Moscow?M&format=\[+%c\]+🌡️+%t+💧+%h+🗜+%P+💨+%w+☔+%p+🌞+%uUV')
-          [[ -n $weather ]] && [[ ! $weather =~ "Unknown location" ]] && sed -i "3i- \`$(date)\` $weather" README.md
+          weatherFormat="\[+%c\]+🌡️+%t+💧+%h+🗜+%P+💨+%w+☔+%p+🌞+%uUV"
+          weatherData=$(curl "wttr.in/Moscow?M&format=$weatherFormat")
+
+          [[ -n $weatherData ]] \
+          && [[ ! $weatherData =~ "Unknown location" ]] \
+          && sed -i "3i- \`$(date)\` $weatherData" README.md
 
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
