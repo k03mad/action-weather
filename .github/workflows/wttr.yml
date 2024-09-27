@@ -24,7 +24,8 @@ jobs:
 
           OUTPUT_MAIN_FILE="README.md"
           OUTPUT_TEMP_FILE="README_TEMP.md"
-          OUTPUT_CUT_LINES=5000
+          # max README.MD rows for displaying at repo page
+          OUTPUT_CUT_LINES=4291
 
           weatherFormat="\[+%c\]+🌡️+%t+💧+%h+🗜+%P+💨+%w+☔+%p+🌞+%uUV"
           weatherData=$(curl "wttr.in/Moscow?M&format=$weatherFormat")
