@@ -33,7 +33,7 @@ jobs:
           && sed -i "3i- \`$(date)\` $weatherData" $OUTPUT_FILE
 
           cut=$(awk "NR >= 0 && NR <= $OUTPUT_CUT_LINES" $OUTPUT_FILE)
-          echo $cut > README.MD
+          echo "$cut" > README.MD
 
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
