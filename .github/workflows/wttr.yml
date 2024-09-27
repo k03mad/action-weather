@@ -22,12 +22,18 @@ jobs:
           sudo locale-gen ru_RU.UTF-8
           export LC_ALL=ru_RU.UTF-8
 
+          OUTPUT_FILE="README.md"
+          OUTPUT_CUT_LINES=4320
+
           weatherFormat="\[+%c\]+🌡️+%t+💧+%h+🗜+%P+💨+%w+☔+%p+🌞+%uUV"
           weatherData=$(curl "wttr.in/Moscow?M&format=$weatherFormat")
 
           [[ -n $weatherData ]] \
           && [[ ! $weatherData =~ "Unknown location" ]] \
-          && sed -i "3i- \`$(date)\` $weatherData" README.md
+          && sed -i "3i- \`$(date)\` $weatherData" $OUTPUT_FILE
+
+          cut=$(awk "NR >= 0 && NR <= $CUT_FILE_LINES" $OUTPUT_FILE)
+          echo $cut > README.MD
 
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
