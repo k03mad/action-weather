@@ -22,7 +22,8 @@ jobs:
           sudo locale-gen ru_RU.UTF-8
           export LC_ALL=ru_RU.UTF-8
 
-          OUTPUT_FILE="README.md"
+          OUTPUT_MAIN_FILE="README.md"
+          OUTPUT_TEMP_FILE="README_TEMP.md"
           OUTPUT_CUT_LINES=10
 
           weatherFormat="\[+%c\]+🌡️+%t+💧+%h+🗜+%P+💨+%w+☔+%p+🌞+%uUV"
@@ -30,10 +31,10 @@ jobs:
 
           [[ -n $weatherData ]] \
           && [[ ! $weatherData =~ "Unknown location" ]] \
-          && sed -i "3i- \`$(date)\` $weatherData" $OUTPUT_FILE
+          && sed -i "3i- \`$(date)\` $weatherData" $OUTPUT_MAIN_FILE
 
-          cut=$(awk "NR >= 0 && NR <= $OUTPUT_CUT_LINES" $OUTPUT_FILE)
-          echo "$cut" > q.MD
+          awk "NR >= 0 && NR <= $OUTPUT_CUT_LINES" $OUTPUT_MAIN_FILE > $OUTPUT_TEMP_FILE
+          mv $OUTPUT_TEMP_FILE $OUTPUT_MAIN_FILE
 
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
